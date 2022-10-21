@@ -56,6 +56,10 @@ body {
   color: black;
 }
 
+.navbar .menu {
+  display: none;
+}
+
 #welcome {
   position: absolute;
   left: 0px;
@@ -65,11 +69,38 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 700px) {
-  .book-container, .navbar {   
+@media screen and (max-width: 600px) {
+  .book-container {   
     flex-direction: column;
   }
   .book {
     width: 100%;
+  }
+  .navbar a:not(:last-child) {
+    display: none;
+  }
+
+  .navbar a:first-child {
+    display: block;
+  }
+  .navbar a:last-child {
+    margin-left: auto;
+    display: block;
+  }
+
+  .navbar.responsive {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .navbar.responsive a {
+    display: block;
+    text-align: left;
+  }
+
+  .navbar.responsive .menu {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
